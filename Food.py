@@ -17,8 +17,8 @@ food = turtle.Turtle("circle")
 
 
 
-x = random.randint(int(-X_RANGE), int(X_RANGE))
-y = random.randint(int(-Y_RANGE), int(Y_RANGE - 2 * TURTLE_SIZE))
+x = random.randint(int(-X_RANGE+TURTLE_SIZE), int(X_RANGE-TURTLE_SIZE))
+y = random.randint(int(-Y_RANGE + TURTLE_SIZE), int(Y_RANGE - 2 * TURTLE_SIZE))
 
 
 def add_food():
