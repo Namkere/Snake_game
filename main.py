@@ -1,4 +1,5 @@
 import time
+import random
 import turtle
 from turtle import Screen
 from Food import *
@@ -7,9 +8,9 @@ from Scoreboard import *
 
 X_RANGE = (WIDTH - TURTLE_SIZE) / 2
 Y_RANGE = (HEIGHT - TURTLE_SIZE) / 2
-r = random.randint(1,255)
-g = random.randint(1,255)
-b = random.randint(1,255)
+
+colours =["blue", "red", "cyan", "magenta", "white", "pink", "brown", "green"]
+colour = random.choice(colours)
 
 x = random.randint(int(-X_RANGE + 2*TURTLE_SIZE), int(X_RANGE- 2*TURTLE_SIZE))
 y = random.randint(int(-Y_RANGE + 2*TURTLE_SIZE), int(Y_RANGE - 2 * TURTLE_SIZE))
@@ -50,7 +51,7 @@ while game_is_on:
     if snakes[0].distance(food) < TURTLE_SIZE - 4:
         food.goto(x, y)
         add_segments()
-        food.color(r, g, b)
+        food.color(colour)
         update_score(10)
 
     #to check if the game is over:
@@ -70,6 +71,6 @@ while game_is_on:
             time.sleep(1)
             reset()
 
-# window.exitonclick()
+
 
 turtle.mainloop()
